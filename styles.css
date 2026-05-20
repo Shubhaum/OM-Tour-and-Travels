@@ -1,248 +1,57 @@
-:root {
-  color-scheme: light;
-  color: #0f172a;
-  background: #f8fafc;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.6;
-}
-
 * {
-  box-sizing: border-box;
+  margin-top: 40px;
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+.floating-buttons {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-a {
-  color: inherit;
+.call-btn,
+.whatsapp-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 26px;
   text-decoration: none;
 }
 
-.container {
-  width: min(1120px, calc(100% - 2rem));
-  margin: 0 auto;
+.call-btn {
+  background: black;
 }
 
-.topbar {
-  background: #ffffff;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+.whatsapp-btn {
+  background: #25D366;
 }
 
-.topbar-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 0;
-}
-
-.brand {
-  font-weight: 800;
-  letter-spacing: 0.05em;
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-  align-items: center;
-}
-
-nav a {
-  color: #334155;
-  font-weight: 600;
-}
-
-nav a.active,
-nav a:hover {
-  color: #1d4ed8;
-}
-
-.hero {
-  padding: 5rem 0 4rem;
-  background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
-  color: white;
-}
-
-.hero-inner {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 2rem;
-  align-items: center;
-}
-
-.hero h1 {
-  margin: 0;
-  font-size: clamp(2.7rem, 4vw, 4rem);
-  line-height: 1.05;
-}
-
-.hero .intro {
-  max-width: 620px;
-  margin: 1.4rem 0 2rem;
-  font-size: 1.05rem;
-  opacity: 0.92;
-}
-
-.hero-media img {
-  border-radius: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.25);
-}
-
-.section {
-  padding: 5rem 0;
-}
-
-.section-heading {
-  max-width: 720px;
-  margin-bottom: 2rem;
-}
-
-.section h2 {
-  font-size: clamp(2rem, 2.4vw, 2.8rem);
-  margin-bottom: 0.8rem;
-}
-
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-weight: 700;
-  opacity: 0.85;
-  margin-bottom: 1rem;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-}
-
-.feature-card,
-.card,
-.contact-card,
-.media-card {
-  padding: 1.75rem;
-  border-radius: 24px;
-  background: white;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
-}
-
-.feature-card h3,
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 0.85rem;
-  font-size: 1.2rem;
-}
-
-.feature-card p,
-.card p,
-.media-caption,
-.contact-card p {
-  margin: 0;
-  color: #475569;
-}
-
-.mini-cards {
-  background: #f8fafc;
-}
-
-.media-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
-}
-
-.media-grid img {
-  border-radius: 24px;
-  background: white;
-  padding: 1rem;
-}
-
-.split {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
-}
-
-.contact-section ul,
-.feature-block ul {
-  margin: 1.2rem 0 0;
-  padding-left: 1.3rem;
-  color: #334155;
-}
-
-.contact-section ul li,
-.feature-block ul li {
-  margin-bottom: 0.9rem;
-}
-
-.feature-block {
-  margin-top: 2rem;
-}
-
-.card-icon {
-  width: 56px;
-  margin-bottom: 1rem;
-}
-
-.contact {
-  background: #eef2ff;
-}
-
-.contact-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-button,
-input,
-textarea {
-  font: inherit;
-}
-
-footer {
-  padding: 1.5rem 0;
-  background: #0f172a;
-  color: #cbd5e1;
-}
-
-.footer-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-between;
-}
-
-@media (max-width: 900px) {
-  .hero-inner,
-  .split,
-  .footer-row {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding: 4rem 0 3rem;
-  }
-}
-
-@media (max-width: 520px) {
-  .topbar-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+@media(max-width: 768px) {
 
   nav {
-    width: 100%;
+    display: none;
   }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .section-title h2 {
+    font-size: 32px;
+  }
+
 }
