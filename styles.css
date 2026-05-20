@@ -1,350 +1,248 @@
-/* ==========================================================================
-   1. GLOBAL SYSTEM VARIABLES & RESET
-   ========================================================================== */
 :root {
-    --primary: #0a3254;       /* Deep Luxury Himalayan Blue */
-    --secondary: #164e7a;     /* Mid-tone Accent Blue */
-    --accent: #f28b16;        /* Radiant Sunset Gold */
-    --text-dark: #222c35;     /* Dark Charcoal for high readability */
-    --text-light: #f4f6f8;    /* Off-white background elements */
-    --white: #ffffff;
-    --glass-bg: rgba(255, 255, 255, 0.12);
-    --glass-border: rgba(255, 255, 255, 0.2);
-    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 8px 24px rgba(10, 50, 84, 0.12);
-    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.2);
-    --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  color-scheme: light;
+  color: #0f172a;
+  background: #f8fafc;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 body {
-    color: var(--text-dark);
-    background-color: var(--white);
-    line-height: 1.6;
-    overflow-x: hidden;
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
 }
 
-a { text-decoration: none; color: inherit; }
-img, video { max-width: 100%; display: block; }
-
-/* ==========================================================================
-   2. UTILITY COMPONENTS (Animations & Grid Systems)
-   ========================================================================== */
-.section-padding { padding: 80px 8% 80px 8%; }
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
-.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px; }
-
-.section-title {
-    font-size: 2.2rem;
-    color: var(--primary);
-    margin-bottom: 12px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-.section-subtitle {
-    font-size: 1.1rem;
-    color: #667685;
-    margin-bottom: 45px;
-}
-.accent-line {
-    width: 60px;
-    height: 4px;
-    background: var(--accent);
-    margin: 12px 0 25px 0;
-    border-radius: 2px;
-}
-.text-center .accent-line { margin: 12px auto 25px auto; }
-
-/* Scroll-Driven Reveal Engine */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: var(--transition-smooth);
-}
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+img {
+  max-width: 100%;
+  display: block;
 }
 
-/* UI Buttons */
-.btn-primary {
-    background: var(--accent);
-    color: var(--white);
-    padding: 14px 32px;
-    border-radius: 50px;
-    font-weight: 600;
-    display: inline-block;
-    transition: var(--transition-smooth);
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 14px rgba(242, 139, 22, 0.3);
-}
-.btn-primary:hover {
-    background: #d8760b;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(242, 139, 22, 0.4);
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-/* ==========================================================================
-   3. HEADER & HEADER UTILITIES
-   ========================================================================== */
-.top-bar {
-    background: var(--primary);
-    color: var(--white);
-    padding: 10px 8%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.9rem;
-    font-weight: 400;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
 }
-.top-bar .contact-meta span { margin-right: 20px; }
 
-header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(15px);
-    box-shadow: var(--shadow-sm);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: var(--transition-smooth);
+.topbar {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 }
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 8%;
-}
-.logo h1 {
-    font-size: 1.6rem;
-    color: var(--primary);
-    font-weight: 800;
-    letter-spacing: -1px;
-}
-.logo span { color: var(--accent); }
 
-.nav-links { display: flex; list-style: none; align-items: center; }
-.nav-links li { margin-left: 35px; }
-.nav-links a {
-    font-weight: 600;
-    color: var(--primary);
-    font-size: 1rem;
-    transition: var(--transition-smooth);
-    padding: 8px 0;
-    position: relative;
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
 }
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--accent);
-    transition: var(--transition-smooth);
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.05em;
 }
-.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-.nav-links a:hover, .nav-links a.active { color: var(--accent); }
 
-/* Hamburger Menu Toggle */
-.menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
-.menu-toggle span { width: 25px; height: 3px; background: var(--primary); border-radius: 2px; }
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  align-items: center;
+}
 
-/* ==========================================================================
-   4. MULTIMEDIA BACKGROUND VIDEO HERO SYSTEM
-   ========================================================================== */
-.hero-video-container {
-    position: relative;
-    height: 85vh;
+nav a {
+  color: #334155;
+  font-weight: 600;
+}
+
+nav a.active,
+nav a:hover {
+  color: #1d4ed8;
+}
+
+.hero {
+  padding: 5rem 0 4rem;
+  background: linear-gradient(135deg, #0f172a 0%, #2563eb 100%);
+  color: white;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.7rem, 4vw, 4rem);
+  line-height: 1.05;
+}
+
+.hero .intro {
+  max-width: 620px;
+  margin: 1.4rem 0 2rem;
+  font-size: 1.05rem;
+  opacity: 0.92;
+}
+
+.hero-media img {
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.25);
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-heading {
+  max-width: 720px;
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  font-size: clamp(2rem, 2.4vw, 2.8rem);
+  margin-bottom: 0.8rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  opacity: 0.85;
+  margin-bottom: 1rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card,
+.card,
+.contact-card,
+.media-card {
+  padding: 1.75rem;
+  border-radius: 24px;
+  background: white;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+.feature-card h3,
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.85rem;
+  font-size: 1.2rem;
+}
+
+.feature-card p,
+.card p,
+.media-caption,
+.contact-card p {
+  margin: 0;
+  color: #475569;
+}
+
+.mini-cards {
+  background: #f8fafc;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.media-grid img {
+  border-radius: 24px;
+  background: white;
+  padding: 1rem;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.contact-section ul,
+.feature-block ul {
+  margin: 1.2rem 0 0;
+  padding-left: 1.3rem;
+  color: #334155;
+}
+
+.contact-section ul li,
+.feature-block ul li {
+  margin-bottom: 0.9rem;
+}
+
+.feature-block {
+  margin-top: 2rem;
+}
+
+.card-icon {
+  width: 56px;
+  margin-bottom: 1rem;
+}
+
+.contact {
+  background: #eef2ff;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+footer {
+  padding: 1.5rem 0;
+  background: #0f172a;
+  color: #cbd5e1;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+  .hero-inner,
+  .split,
+  .footer-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 4rem 0 3rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .topbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
     width: 100%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--white);
-}
-#bg-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -2;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-}
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(10,50,84,0.75), rgba(0,0,0,0.6));
-    z-index: -1;
-}
-.hero-content { text-align: center; max-width: 900px; padding: 0 20px; }
-.hero-content h2 { font-size: 3.5rem; font-weight: 800; line-height: 1.15; margin-bottom: 20px; text-transform: capitalize; }
-.hero-content p { font-size: 1.3rem; margin-bottom: 35px; font-weight: 300; color: #e2e8f0; }
-
-/* ==========================================================================
-   5. PREMIUM CARD INTERFACES
-   ========================================================================== */
-.card {
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition-smooth);
-    border: 1px solid #eef2f5;
-}
-.card:hover { transform: translateY(-8px); box-shadow: var(--shadow-md); }
-.card-img-wrapper { position: relative; overflow: hidden; height: 230px; }
-.card-img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth); }
-.card:hover .card-img { transform: scale(1.08); }
-.card-content { padding: 28px; }
-.card-content h3 { font-size: 1.4rem; color: var(--primary); margin-bottom: 12px; font-weight: 700; }
-.card-content p { color: #526374; font-size: 0.95rem; margin-bottom: 20px; }
-.card-meta { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f4f8; padding-top: 18px; }
-.card-price { color: var(--accent); font-weight: 700; font-size: 1.2rem; }
-.card-duration { font-size: 0.85rem; color: #8292a1; font-weight: 500; }
-
-/* ==========================================================================
-   6. PREMIUM GLASSMORPHIC TESTIMONIAL SUITE
-   ========================================================================== */
-.testimonials-section {
-    background: linear-gradient(135deg, var(--primary) 0%, #04192b 100%);
-    color: var(--white);
-    position: relative;
-    overflow: hidden;
-}
-.testimonial-carousel { max-width: 850px; margin: 40px auto 0 auto; position: relative; min-height: 280px; }
-.testimonial-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    padding: 50px 45px;
-    border-radius: 24px;
-    display: none;
-    box-shadow: var(--shadow-lg);
-    position: relative;
-}
-.testimonial-card.active { display: block; animation: slideCardIn 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-@keyframes slideCardIn {
-    from { opacity: 0; transform: scale(0.96) translateY(10px); }
-    to { opacity: 1; transform: scale(1) translateY(0); }
-}
-.quote-icon { font-size: 4rem; color: var(--accent); opacity: 0.2; position: absolute; top: 15px; left: 30px; font-family: Georgia, serif; line-height: 0; }
-.stars { color: var(--accent); margin-bottom: 20px; font-size: 1.2rem; letter-spacing: 2px; }
-.testimonial-text { font-size: 1.2rem; font-style: italic; font-weight: 300; line-height: 1.7; margin-bottom: 25px; color: #e2e8f0; position: relative; z-index: 2; }
-.testimonial-author { font-size: 1.1rem; font-weight: 700; color: var(--white); }
-.testimonial-location { font-size: 0.85rem; color: var(--accent); font-weight: 500; margin-top: 4px; }
-
-.carousel-controls { display: flex; justify-content: center; gap: 15px; margin-top: 30px; }
-.control-btn {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    color: var(--white);
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: var(--transition-smooth);
-}
-.control-btn:hover { background: var(--accent); border-color: var(--accent); color: var(--white); transform: scale(1.05); }
-
-/* Static grid style for separate Reviews Page */
-.reviews-page-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
-.reviews-page-grid .testimonial-card { display: block; background: #ffffff10; }
-
-/* ==========================================================================
-   7. LIVE ROUTE & BOOKING INTERFACE
-   ========================================================================== */
-.booking-container { background: var(--white); border-radius: 20px; padding: 40px; box-shadow: var(--shadow-md); border: 1px solid #eef2f5; }
-.form-group { margin-bottom: 22px; text-align: left; }
-.form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary); font-size: 0.9rem; }
-.form-control {
-    width: 100%;
-    padding: 14px 18px;
-    border: 1px solid #cbd5e1;
-    border-radius: 10px;
-    font-size: 1rem;
-    color: var(--text-dark);
-    transition: var(--transition-smooth);
-    background: #f8fafc;
-}
-.form-control:focus { outline: none; border-color: var(--accent); background: var(--white); box-shadow: 0 0 0 4px rgba(242,139,22,0.15); }
-
-/* ==========================================================================
-   8. FOOTER ARCHITECTURE
-   ========================================================================== */
-footer { background: #061524; color: #94a3b8; padding: 70px 8% 30px 8%; font-size: 0.95rem; border-top: 5px solid var(--accent); }
-footer h4 { color: var(--white); font-size: 1.2rem; margin-bottom: 25px; font-weight: 700; position: relative; }
-footer h4::after { content: ''; display: block; width: 35px; height: 2px; background: var(--accent); margin-top: 8px; }
-footer ul { list-style: none; }
-footer ul li { margin-bottom: 12px; }
-footer ul li a { transition: var(--transition-smooth); }
-footer ul li a:hover { color: var(--accent); padding-left: 5px; }
-.footer-bottom { text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.85rem; color: #64748b; }
-
-/* ==========================================================================
-   9. INTERACTIVE FLOATING DIRECT ACTION CALLS (CTAs)
-   ========================================================================== */
-.floating-actions { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 14px; z-index: 2000; }
-.float-btn {
-    width: 58px;
-    height: 58px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.6rem;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-    transition: var(--transition-smooth);
-    cursor: pointer;
-}
-.float-btn.whatsapp { background-color: #25D366; }
-.float-btn.call { background-color: #0066cc; }
-.float-btn:hover { transform: scale(1.1) translateY(-3px); }
-
-/* ==========================================================================
-   10. ADAPTIVE RESPONSIVE FRAMEWORK
-   ========================================================================== */
-@media (max-width: 992px) {
-    .hero-content h2 { font-size: 2.8rem; }
-    .grid-2 { grid-template-columns: 1fr; }
-}
-@media (max-width: 768px) {
-    .top-bar { display: none; }
-    .menu-toggle { display: flex; }
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--white);
-        box-shadow: var(--shadow-md);
-        padding: 20px;
-        border-top: 1px solid #f0f4f8;
-    }
-    .nav-links.show { display: flex; }
-    .nav-links li { margin: 12px 0; width: 100%; text-align: center; }
-    .section-padding { padding: 60px 5%; }
-    .hero-content h2 { font-size: 2.2rem; }
+  }
 }
