@@ -127,7 +127,7 @@ font-size:14px;
 
 .hero {
 height:100vh;
-background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000&auto=format&fit=crop') center/cover;
+background:url('https://www.google.com/search?q=om+tour+and+travel+mandi&num=10&sca_esv=5178d5e68eb1e7c2&sxsrf=ANbL-n4h9wXZ-D2yMOqw5_oOk-e0n-H6mw%3A1779291660923&ei=DNYNat3WN46hseMPkMO-8Qk&biw=1280&bih=585&ved=0ahUKEwjdjJr7mciUAxWOUGwGHZChL54Q4dUDCBI&uact=5&oq=om+tour+and+travel+mandi&gs_lp=Egxnd3Mtd2l6LXNlcnAiGG9tIHRvdXIgYW5kIHRyYXZlbCBtYW5kaTIFECEYoAEyBRAhGKABMgUQIRigATIFECEYoAEyBBAhGBVI3RtQkglYqxJwAXgAkAEAmAHcAaABxQiqAQUwLjUuMbgBA8gBAPgBAZgCB6ACtAnCAg0QABiABBgUGIcCGLADwgIJEAAYBxgeGLADwgIIEAAYgAQYsAPCAgUQABiABMICBhAAGBYYHsICCxAAGIAEGIoFGIYDwgIIEAAYgAQYogTCAgUQABjvBcICBxAhGAoYoAGYAwCIBgGQBgmSBwUxLjQuMqAHlCmyBwUwLjQuMrgHqwnCBwUyLTIuNcgHUoAIAQ&sclient=gws-wiz-serp#sv=CAESzQEKuQEStgEKd0FNbjMteVJlajFOM25kdk9YRkdBT0hTOEhDdHpOdU5zY2dlbmpwT0ItVzNReHRBYndNQ3diY1RzSjN4eU5zZzlxR08zWnBNdHVpR3FNd05QQ0t0ZmFBQ2J0dEF0MzJPVE0zMG5EYnFkTVNyc0huVDlPZ1RsTkdJEhdIOVlOYXQtN0h1N2tzZU1QeHFUdTJRRRoiQUpLTEZtSldHSEJkSnZIQmkzWUxkbjJoYlVqdHdhU1JDURIEODEwNRoBMyoAMAA4AUAAGAAgxvCXOUoCEAI&lpg=cid:CgIgAQ%3D%3D,ik:CAoSFkNJSE0wb2dLRUlDQWdJREJxTGItWmc%3D') center/cover;
 position:relative;
 display:flex;
 align-items:center;
@@ -163,6 +163,12 @@ margin-bottom:30px;
 display:flex;
 gap:15px;
 flex-wrap:wrap;
+}
+
+.hero-media img {
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.25);
 }
 
 .section {
