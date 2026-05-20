@@ -1,58 +1,250 @@
 <!DOCTYPE html>
-      <form>
-        <input type="text" placeholder="Your Name">
-        <input type="text" placeholder="Phone Number">
-        <input type="text" placeholder="Pickup Location">
-        <input type="text" placeholder="Destination">
-        <textarea placeholder="Trip Details"></textarea>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OM Tour Travels Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
 
-        <button type="submit" class="btn">Send Inquiry</button>
-      </form>
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-md text-white shadow-lg">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <div>
+        <h1 class="text-2xl font-bold tracking-wide">OM Tour Travels</h1>
+        <p class="text-xs text-gray-300">Mandi • Himachal Pradesh</p>
+      </div>
+
+      <nav class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="#" class="hover:text-orange-400">Home</a>
+        <a href="#" class="hover:text-orange-400">Routes</a>
+        <a href="#" class="hover:text-orange-400">Fleet</a>
+        <a href="#" class="hover:text-orange-400">Packages</a>
+        <a href="#" class="hover:text-orange-400">Contact</a>
+      </nav>
+
+      <a href="#" class="bg-orange-500 hover:bg-orange-600 px-5 py-2 rounded-full text-sm font-semibold">
+        WhatsApp Booking
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="h-screen bg-cover bg-center relative flex items-center"
+    style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000&auto=format&fit=crop');">
+
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-white">
+      <div class="max-w-3xl">
+
+        <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+          Trusted Taxi Services from Chandigarh to Himachal
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
+          Book reliable taxi services for Mandi, Manali, Kasol,
+          Bir Billing and nearby Himachal destinations with experienced local drivers.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#" class="bg-orange-500 hover:bg-orange-600 px-7 py-4 rounded-full font-semibold">
+            Call Now
+          </a>
+
+          <a href="#" class="border border-white hover:bg-white hover:text-black transition px-7 py-4 rounded-full font-semibold">
+            Book on WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Routes -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="text-center mb-14">
+        <h2 class="text-4xl font-bold mb-4">Popular Taxi Routes</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Most booked Himachal taxi routes from Chandigarh and Mandi.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="bg-white rounded-3xl shadow-lg p-8 hover:-translate-y-2 transition">
+          <h3 class="text-2xl font-semibold mb-4">Chandigarh to Mandi Taxi</h3>
+          <p class="text-gray-600 mb-6">
+            Comfortable taxi service with experienced hill drivers.
+          </p>
+          <button class="bg-orange-500 text-white px-5 py-3 rounded-full">
+            View Details
+          </button>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-lg p-8 hover:-translate-y-2 transition">
+          <h3 class="text-2xl font-semibold mb-4">Chandigarh to Manali Taxi</h3>
+          <p class="text-gray-600 mb-6">
+            Safe and affordable cab booking for Himachal trips.
+          </p>
+          <button class="bg-orange-500 text-white px-5 py-3 rounded-full">
+            View Details
+          </button>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-lg p-8 hover:-translate-y-2 transition">
+          <h3 class="text-2xl font-semibold mb-4">Mandi to Kasol Taxi</h3>
+          <p class="text-gray-600 mb-6">
+            Explore Kasol and Parvati Valley with local taxi services.
+          </p>
+          <button class="bg-orange-500 text-white px-5 py-3 rounded-full">
+            View Details
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Fleet -->
+  <section class="py-24 bg-black text-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="text-center mb-14">
+        <h2 class="text-4xl font-bold mb-4">Our Vehicle Fleet</h2>
+        <p class="text-gray-300">Comfortable vehicles for mountain travel.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="bg-white text-black rounded-3xl overflow-hidden shadow-xl">
+          <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1200&auto=format&fit=crop" class="h-64 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold mb-3">Swift Dzire</h3>
+            <p>4+1 Seating</p>
+          </div>
+        </div>
+
+        <div class="bg-white text-black rounded-3xl overflow-hidden shadow-xl">
+          <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200&auto=format&fit=crop" class="h-64 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold mb-3">Innova Crysta</h3>
+            <p>7+1 Seating</p>
+          </div>
+        </div>
+
+        <div class="bg-white text-black rounded-3xl overflow-hidden shadow-xl">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop" class="h-64 w-full object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold mb-3">Ertiga</h3>
+            <p>6+1 Seating</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="py-24 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="text-center mb-14">
+        <h2 class="text-4xl font-bold mb-4">Why Choose OM Tour Travels</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <div class="bg-white p-8 rounded-3xl shadow-md text-center">
+          <div class="text-5xl mb-5">⛰️</div>
+          <h3 class="text-xl font-semibold">Experienced Hill Drivers</h3>
+        </div>
+
+        <div class="bg-white p-8 rounded-3xl shadow-md text-center">
+          <div class="text-5xl mb-5">🚖</div>
+          <h3 class="text-xl font-semibold">Clean Vehicles</h3>
+        </div>
+
+        <div class="bg-white p-8 rounded-3xl shadow-md text-center">
+          <div class="text-5xl mb-5">📞</div>
+          <h3 class="text-xl font-semibold">24x7 Support</h3>
+        </div>
+
+        <div class="bg-white p-8 rounded-3xl shadow-md text-center">
+          <div class="text-5xl mb-5">💰</div>
+          <h3 class="text-xl font-semibold">Affordable Pricing</h3>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+
+      <div class="bg-gray-50 rounded-[40px] shadow-2xl p-10 md:p-16">
+
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold mb-4">Book Your Taxi Now</h2>
+          <p class="text-gray-600">Get instant Himachal taxi booking assistance.</p>
+        </div>
+
+        <form class="grid md:grid-cols-2 gap-6">
+          <input type="text" placeholder="Your Name" class="border rounded-2xl p-4">
+          <input type="text" placeholder="Phone Number" class="border rounded-2xl p-4">
+          <input type="text" placeholder="Pickup Location" class="border rounded-2xl p-4">
+          <input type="text" placeholder="Destination" class="border rounded-2xl p-4">
+
+          <textarea placeholder="Trip Details" class="border rounded-2xl p-4 md:col-span-2 h-40"></textarea>
+
+          <button class="bg-orange-500 text-white py-4 rounded-2xl font-semibold md:col-span-2">
+            Send Inquiry
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-gray-300 py-10">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+
+      <div>
+        <h3 class="text-2xl font-bold text-white mb-4">OM Tour Travels</h3>
+        <p class="leading-relaxed text-sm">
+          Trusted taxi and tour services from Chandigarh to Himachal Pradesh.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4">Popular Routes</h4>
+        <ul class="space-y-2 text-sm">
+          <li>Chandigarh to Mandi</li>
+          <li>Chandigarh to Manali</li>
+          <li>Mandi to Kasol</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold mb-4">Contact</h4>
+        <ul class="space-y-2 text-sm">
+          <li>📍 Mandi, Himachal Pradesh</li>
+          <li>📞 +91 830252009</li>
+          <li>✉️ info@om-tourtravels.com</li>
+        </ul>
+      </div>
+
     </div>
 
-  </div>
-</section>
-
-<footer>
-  <div class="container footer-grid">
-
-    <div>
-      <h3>OM Tour Travels</h3>
-      <p>
-        Trusted Himachal taxi services from Chandigarh to Mandi,
-        Manali, Kasol and nearby destinations.
-      </p>
+    <div class="text-center text-sm text-gray-500 mt-10 border-t border-white/10 pt-6">
+      © 2026 OM Tour Travels. All Rights Reserved.
     </div>
-
-    <div>
-      <h3>Popular Routes</h3>
-      <ul>
-        <li>Chandigarh to Mandi</li>
-        <li>Chandigarh to Manali</li>
-        <li>Mandi to Kasol</li>
-      </ul>
-    </div>
-
-    <div>
-      <h3>Contact</h3>
-      <p>📍 Mandi, Himachal Pradesh</p>
-      <p>📞 +91 830252009</p>
-      <p>✉ info@om-tourtravels.com</p>
-    </div>
-
-  </div>
-
-  <div class="copyright">
-    © 2026 OM Tour Travels. All Rights Reserved.
-  </div>
-</footer>
-
-<div class="floating-buttons">
-  <a href="tel:+91830252009" class="call-btn">📞</a>
-  <a href="https://wa.me/91830252009" class="whatsapp-btn">💬</a>
-</div>
-
-<script src="js/script.js"></script>
+  </footer>
 
 </body>
 </html>
