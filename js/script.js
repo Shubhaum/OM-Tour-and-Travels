@@ -1,1 +1,1 @@
-console.log('OM Tour Travels Website Loaded');
+console.log('OM Tour Travels Loaded Successfully');
